@@ -1,0 +1,19 @@
+# Data (never commit raw or processed data — see data/README.md for sources)
+data/raw/
+data/processed/
+*.csv
+*.parquet
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Tableau
+*.hyper
+*.twbx
+
+# OS
+.DS_Store
