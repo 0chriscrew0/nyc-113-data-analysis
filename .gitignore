@@ -4,9 +4,6 @@ data/processed/
 *.csv
 *.parquet
 
-# Claude Code working notes, local only
-CLAUDE.md
-
 # Python
 __pycache__/
 *.pyc
