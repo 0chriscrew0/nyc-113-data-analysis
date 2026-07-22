@@ -1,9 +1,9 @@
 # Data sources
 
 Raw and processed data are gitignored. This file is the source of truth for
-where everything came from — fill in the blanks as each dataset is pulled.
+where everything came from. Fill in the blanks as each dataset is pulled.
 
-## NYC 311 Service Requests (2022–2025)
+## NYC 311 Service Requests (2022-2025)
 
 - **Source:** NYC Open Data, Socrata dataset `erm2-nwe9`
 - **URL:** https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
