@@ -16,10 +16,13 @@ where everything came from. Fill in the blanks as each dataset is pulled.
 
 ## ACS Median Household Income (B19013, ZCTA level)
 
-- **Source:** U.S. Census Bureau, ACS 5-Year Estimates
-- **URL:** _TBD (data.census.gov or Census API)_
-- **Vintage:** _TBD_
-- **Download date:** _TBD_
+- **Source:** U.S. Census Bureau, ACS 5-Year Estimates, table B19013
+- **URL:** https://api.census.gov/data/2023/acs/acs5
+- **Vintage:** 2023 5-year (2019-2023), the most recent available at download time
+- **Download method:** `scripts/download_acs_income.py`. The Census API doesn't support filtering ZCTAs by state for this table, so the script pulls all ~33,000 ZCTAs nationwide in one call and keeps the ones with a NYC ZIP prefix. Needs a free key from https://api.census.gov/data/key_signup.html, read from a `CENSUS_API_KEY` environment variable (see `.env.example`). Rows with the Census suppression sentinel (`-666666666`) are dropped.
+- **Download date:** 2026-07-22
+- **Output:** `data/reference/nyc_zcta_median_income.csv`, 192 ZCTAs, committed to the repo since it's small
+- **Note:** ZCTAs approximate ZIP codes but aren't identical; see the limitations section of `PLAN.md`.
 
 ## NYC ZIP Code Tabulation Areas (boundary shapefile)
 

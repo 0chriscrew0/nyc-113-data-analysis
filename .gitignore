@@ -4,6 +4,12 @@ data/processed/
 *.csv
 *.parquet
 
+# ...except small committed lookups
+!data/reference/*.csv
+
+# Secrets
+.env
+
 # Python
 __pycache__/
 *.pyc
