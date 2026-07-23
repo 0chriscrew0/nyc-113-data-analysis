@@ -97,11 +97,11 @@ H3 (non-closure) and H1 (resolution time) are really the same problem: never-clo
 ## 4. Step-by-step TODO
 
 ### Phase 1: Acquisition
-- [ ] Download the 311 dataset. Two options: (a) NYC Open Data export UI, (b) Socrata API with `$where=created_date between '2022-01-01' and '2025-12-31'` and pagination. API is cleaner and reproducible, so script it.
-- [ ] Verify row count and date coverage against the portal's stated totals.
-- [ ] Convert CSV to Parquet immediately (`duckdb` one-liner). Cuts file size ~5x and speeds every subsequent query.
-- [ ] Download ACS B19013 median household income by ZCTA from data.census.gov or the Census API.
-- [ ] Commit a `data/README.md` documenting exact source URLs and download date. Do not commit the raw data.
+- [x] Download the 311 dataset. Two options: (a) NYC Open Data export UI, (b) Socrata API with `$where=created_date between '2022-01-01' and '2025-12-31'` and pagination. API is cleaner and reproducible, so script it. Done via `scripts/download_311.py`, 13,506,490 rows.
+- [x] Verify row count and date coverage against the portal's stated totals. Matches the API's `count(*)` exactly.
+- [x] Convert CSV to Parquet immediately (`duckdb` one-liner). Cuts file size ~5x and speeds every subsequent query. 2.3 GB CSV to 480 MB Parquet.
+- [ ] Download ACS B19013 median household income by ZCTA from data.census.gov or the Census API. Blocked on a Census API key.
+- [x] Commit a `data/README.md` documenting exact source URLs and download date. Do not commit the raw data.
 
 ### Phase 2: Cleaning
 - [ ] Profile nulls across all columns; document which fields are unreliable.
